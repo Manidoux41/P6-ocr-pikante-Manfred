@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { getAllUsers, userInfo } from '../controllers/userController.js';
-import { signUp } from '../controllers/authController.js';
+import { logout, signIn, signUp } from '../controllers/authController.js';
 import { catchErrors } from "../config/helpers.js";
 
 /* Path avec ES modules*/ 
@@ -13,6 +13,9 @@ const userRouter = Router();
 
 // auth
 userRouter.post('/signup', catchErrors(signUp));
+userRouter.post('/login', catchErrors(signIn));
+userRouter.post('/logout', catchErrors(logout));
+
 
 userRouter.get('/user', catchErrors(getAllUsers))
 userRouter.get('/user/:id', catchErrors(userInfo))
