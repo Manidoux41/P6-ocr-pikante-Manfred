@@ -9,4 +9,4 @@ const SauceSchema = new mongoose.Schema({
 
 const Sauce = mongoose.model('Sauce', SauceSchema)
 
-export default Sauces;
+export default Sauce;
